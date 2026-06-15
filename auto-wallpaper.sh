@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Wallpaper directory
-WALLPAPER_DIR="$HOME/Pictures/wallz-main"
 read -p "Enter the path of your wallpaler dir: " WALLPAPER_DIR
 
 # Take interval input

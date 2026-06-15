@@ -30,14 +30,14 @@ Automatically rotate your desktop wallpapers at a custom time interval using a s
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/SubhadipD9/linux-auto-wallpaper-change.git
+cd linux-auto-wallpaper-change
 ```
 
 ### Run the Script
 
 ```bash
-bash ./main.sh
+bash ./auto-wallpaper.sh
 ```
 
 The script will ask for:
@@ -69,6 +69,7 @@ In the above example, the wallpaper changes every **1 hour**.
 | 12 Hours   | 43200   |
 | 24 Hours   | 86400   |
 
+> [!IMPORTANT] You can modify the script based on your preferences, such as hardcoding the directory path or interval.
 ---
 
 ## Directory Structure Example
@@ -102,14 +103,14 @@ By default, the script runs in the foreground and occupies the terminal session.
 To run it in the background:
 
 ```bash
-chmod +x main.sh
-./main.sh &
+chmod +x auto-wallpaper.sh
+./auto-wallpaper.sh &
 ```
 
 You can close the terminal while keeping the process running using:
 
 ```bash
-nohup ./main.sh > wallpaper.log 2>&1 &
+nohup ./auto-wallpaper.sh > wallpaper.log 2>&1 &
 ```
 
 ---
@@ -119,7 +120,7 @@ nohup ./main.sh > wallpaper.log 2>&1 &
 Find the process:
 
 ```bash
-ps aux | grep main.sh
+ps aux | grep auto-wallpaper.sh
 ```
 
 Kill the process:
@@ -131,7 +132,7 @@ kill <PID>
 Or:
 
 ```bash
-pkill -f main.sh
+pkill -f auto-wallpaper.sh
 ```
 
 ---
@@ -161,7 +162,7 @@ Wallpaper Changer
 **Command**
 
 ```text
-/path/to/main.sh
+/path/to/auto-wallpaper.sh
 ```
 
 **Comment**
@@ -185,7 +186,7 @@ crontab -e
 Add:
 
 ```bash
-@reboot /path/to/main.sh
+@reboot /path/to/auto-wallpaper.sh
 ```
 
 Save and exit.
@@ -193,7 +194,7 @@ Save and exit.
 Make the script executable:
 
 ```bash
-chmod +x /path/to/main.sh
+chmod +x /path/to/auto-wallpaper.sh
 ```
 
 > [!NOTE]
@@ -217,7 +218,7 @@ Paste:
 Description=Wallpaper Changer
 
 [Service]
-ExecStart=/path/to/main.sh
+ExecStart=/path/to/auto-wallpaper.sh
 Restart=always
 
 [Install]
@@ -277,7 +278,7 @@ gsettings get org.gnome.desktop.background picture-uri
 Ensure the script has execute permissions:
 
 ```bash
-chmod +x main.sh
+chmod +x auto-wallpaper.sh
 ```
 
 ---
