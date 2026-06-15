@@ -189,6 +189,24 @@ Add:
 @reboot DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/subhadip/customConfigs/auto-wallpaper-change/auto-wallpaper.sh
 ```
 
+> [!NOTE]
+>
+> **DISPLAY**
+>
+> `DISPLAY=:0`
+>
+> - GNOME runs on a graphical display server.
+> - `:0` refers to the main active GUI session.
+> - Without this, GUI-based commands (like wallpaper changes) will fail.
+>
+> **D-Bus session**
+>
+> `DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus`
+>
+> - GNOME uses D-Bus for desktop settings management.
+> - Wallpaper changes typically rely on `gsettings`, which communicates via D-Bus.
+> - This variable connects the script to the active user session bus.
+
 Save and exit.
 
 Make the script executable:
