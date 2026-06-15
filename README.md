@@ -186,7 +186,7 @@ crontab -e
 Add:
 
 ```bash
-@reboot /path/to/auto-wallpaper.sh
+@reboot DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/subhadip/customConfigs/auto-wallpaper-change/auto-wallpaper.sh
 ```
 
 Save and exit.

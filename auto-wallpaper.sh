@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Wallpaper directory
-read -p "Enter the path of your wallpaler dir: " WALLPAPER_DIR
+# read -p "Enter the path of your wallpaler dir: " WALLPAPER_DIR
+WALLPAPER_DIR="$HOME/Pictures/wallz-main"
 
 # Take interval input
-read -p "Choose a timeframe in seconds (default 300): " INTERVAL
+# read -p "Choose a timeframe in seconds (default 300): " INTERVAL
 
 # Use 300 if user enters nothing
-INTERVAL=${INTERVAL:-300}
+INTERVAL=${INTERVAL:-10}
 
 while true; do
     # Get all images recursively
